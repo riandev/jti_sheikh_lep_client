@@ -322,6 +322,7 @@ const SurveyBody = () => {
             <option value="5">
               লন্ডন, টোকিও, নিউইয়র্ক/ইংল্যান্ড,জাপান,আমেরিকা
             </option>
+            <option value="canNotRemember">মনে নেই</option>
           </Form.Control>
         </Form.Group>
       </div>
@@ -333,6 +334,7 @@ const SurveyBody = () => {
             q9 === "3" ||
             q9 === "4" ||
             q9 === "5" ||
+            q9 === "canNotRemember" ||
             q7 === "no"
               ? "block"
               : "none",
