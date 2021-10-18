@@ -404,7 +404,8 @@ const SurveyBody = () => {
             q11dot1 === "no" ||
             q11dot2 === "yes" ||
             q11dot2 === "no" ||
-            q10 === "noPurchase"
+            q10 === "1stick" ||
+            q10 === "2stick"
               ? "block"
               : "none",
         }}
@@ -429,7 +430,8 @@ const SurveyBody = () => {
             q4 === "no" ||
             q6 === "no" ||
             q12 === "yes" ||
-            q12 === "no"
+            q12 === "no" ||
+            q10 === "noPurchase"
               ? "block"
               : "none",
         }}
