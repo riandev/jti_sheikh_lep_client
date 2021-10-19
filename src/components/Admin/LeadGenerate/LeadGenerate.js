@@ -67,10 +67,15 @@ const LeadGenerate = () => {
     fetch("http://192.168.10.11:5055/regenerate?regenDate=" + regenDate)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setRegenerate(
           data
             .map((x) => {
-              return [...x.newLead];
+              return [
+                ...x.regenSachet_sales,
+                ...x.regenStick_vao,
+                ...x.regenRest,
+              ];
             })
             .flat()
             .map((a) => {
