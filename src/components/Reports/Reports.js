@@ -73,15 +73,9 @@ const Reports = () => {
     { label: "q8", key: "answer8" },
     { label: "q9", key: "answer9" },
     { label: "q10", key: "answer10" },
-    { label: "remarksQ10", key: "remarksQ10" },
-    { label: "q11", key: "answer11" },
+    { label: "q11dot1", key: "answer11dot1" },
+    { label: "q11dot2", key: "answer11dot2" },
     { label: "q12", key: "answer12" },
-    { label: "q13", key: "answer13" },
-    { label: "q14", key: "answer14" },
-    { label: "q15", key: "answer15" },
-    { label: "q16", key: "answer16" },
-    { label: "q17", key: "answer17" },
-    { label: "q18", key: "answer18" },
   ];
   return (
     <div className="mt-5">
