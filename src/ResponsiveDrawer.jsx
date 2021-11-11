@@ -69,22 +69,28 @@ const useStyles = makeStyles((theme) => ({
 }));
 function MyStopwatch() {
   const [loginInfo, setLoginInfo] = useContext(userContext);
+  console.log(loginInfo);
   const stopwatchOffset = new Date();
-  stopwatchOffset.setSeconds(stopwatchOffset.getSeconds());
+  let loggedSeconds =
+    (new Date().getTime() - localStorage.getItem("loginTime")) / 1000;
+  stopwatchOffset.setSeconds(stopwatchOffset.getSeconds() + loggedSeconds);
   const { seconds, minutes, hours, isRunning, start, pause, reset } =
     useStopwatch({ autoStart: true, offsetTimestamp: stopwatchOffset });
   const hourTime = hours < 10 ? `0${hours}` : `${hours}`;
-  const secondTime = seconds < 10 ? `0${seconds}` : `${seconds}`;
   const minuteTime = minutes < 10 ? `0${minutes}` : `${minutes}`;
+  const secondTime = seconds < 10 ? `0${seconds}` : `${seconds}`;
   return (
     <div style={{ textAlign: "center" }}>
-      <div style={{ fontSize: "50px" }}>
+      <p style={{ fontSize: "18px", color: "red" }} className="mt-3">
+        Login Time:
+      </p>
+      <div style={{ fontSize: "50px", color: "purple" }}>
         <span>{hourTime}</span>:<span>{minuteTime}</span>:
         <span>{secondTime}</span>
       </div>
-      <p style={{ color: "green" }}>{isRunning ? "Running" : "Not running"}</p>
+      {/* <p style={{ color: "green" }}>{isRunning ? "Running" : "Not running"}</p> */}
       <button className="btn btn-primary mr-2" onClick={start}>
-        Start
+        Resume
       </button>
       <button className="btn btn-danger" onClick={pause}>
         Pause

@@ -20,7 +20,7 @@ const Login = () => {
   const email = loginInfo.email;
 
   useEffect(() => {
-    fetch("http://192.168.10.11:5055/agent?email=" + email)
+    fetch("http://192.168.10.12:5055/agent?email=" + email)
       .then((res) => res.json())
       .then((data) => setMatchedAgent(data))
       .catch((err) => console.log(err));
@@ -37,6 +37,7 @@ const Login = () => {
     ) {
       alert("Matched");
       sessionStorage.setItem("agent", email);
+      localStorage.setItem("loginTime", new Date().getTime());
       history.replace(from);
     } else {
       alert("not Matched");
@@ -49,7 +50,6 @@ const Login = () => {
   const hour = loginTIME.getHours();
   const minute = loginTIME.getMinutes();
   const second = loginTIME.getSeconds();
-  console.log("Date:", date, month, year, "Time:", hour, minute, second);
   setLoginDate(
     year +
       "-" +
