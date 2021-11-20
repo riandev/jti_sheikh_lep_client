@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import "./UploadLead.css";
-import ReactDOM from "react-dom";
 import CSVReader from "react-csv-reader";
 
-const UploadLead = () => {
+const AddUser = () => {
   const [lead, setLead] = useState([]);
   const [status, setStatus] = useState(false);
   const handleForce = (data, fileInfo) => setLead(data);
@@ -16,7 +14,7 @@ const UploadLead = () => {
   };
 
   const handleUploadLead = () => {
-    fetch("http://192.168.10.14:5055/uploadLead", {
+    fetch("http://192.168.10.14:5055/uploadUser", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(lead),
@@ -44,11 +42,11 @@ const UploadLead = () => {
         className="mt-4"
       >
         <h3 style={{ color: "green", fontWeight: "bold" }}>Congratulations!</h3>
-        <h5>Successfully Lead Uploaded to Database</h5>
+        <h5>Successfully User Uploaded to Database</h5>
         <p className="text-secondary">Now Go For Further Activity</p>
       </div>
     </div>
   );
 };
 
-export default UploadLead;
+export default AddUser;
