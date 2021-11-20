@@ -43,6 +43,9 @@ function App() {
                 <Route exact path="/admin/uploadLead">
                   <AdminDashboard></AdminDashboard>
                 </Route>
+                <Route exact path="/admin/addAgent">
+                  <AdminDashboard></AdminDashboard>
+                </Route>
                 <Route exact path="/admin/export">
                   <AdminDashboard></AdminDashboard>
                 </Route>

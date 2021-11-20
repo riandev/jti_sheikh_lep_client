@@ -6,6 +6,7 @@ import UploadLead from "../UploadLead/UploadLead";
 import DeleteLeads from "./../DeleteLeads/DeleteLeads";
 import BrReport from "./../BrReport/BrReport";
 import DownloadReport from "./../DownloadReport/DownloadReport";
+import AddUser from "../AddUser/AddUser";
 
 const routesadmin = [
   {
@@ -56,6 +57,13 @@ const routesadmin = [
     name: "Download Reports",
     toolbar: () => <p className="text-white">Download Reports</p>,
     main: () => <DownloadReport />,
+  },
+  {
+    path: "/admin/addAgent",
+    exact: true,
+    name: "Add Agent",
+    toolbar: () => <p className="text-white">Add Agent</p>,
+    main: () => <AddUser />,
   },
 ];
 
