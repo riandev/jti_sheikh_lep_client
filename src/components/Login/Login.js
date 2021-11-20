@@ -33,7 +33,7 @@ const Login = () => {
   const confirmSignIn = () => {
     if (
       loginInfo.email === matchedAgent.email &&
-      loginInfo.password === matchedAgent.password
+      parseInt(loginInfo.password) === matchedAgent.password
     ) {
       alert("Matched");
       sessionStorage.setItem("agent", email);
