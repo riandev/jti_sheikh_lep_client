@@ -14,7 +14,7 @@ const AddUser = () => {
   };
 
   const handleUploadLead = () => {
-    fetch("http://192.168.10.14:5055/uploadUser", {
+    fetch("http://192.168.10.12:5055/uploadUser", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(lead),
